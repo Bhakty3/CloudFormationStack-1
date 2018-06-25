@@ -3,10 +3,6 @@
    "AWSTemplateFormatVersion": "2010-09-09",
    "Description":"AWS CloudFormation Template educate-iam-and-billing-alarm: Creates default IAM User and Billing Alarm.",
    "Parameters":{  
-      "BillingNotificationEmail":{  
-         "Type":"String",
-         "Default":"abc@gmail.com"
-      },
       "IAMPassword":{  
          "Type":"String",
          "Default":"password"
