@@ -1,7 +1,7 @@
 
 {  
    "AWSTemplateFormatVersion": "2010-09-09",
-   "Description":"AWS CloudFormation Template educate-iam-and-billing-alarm: Creates default IAM User and Billing Alarm.",
+   "Description":"AWS CloudFormation Template: Creates default IAM User with Billing Alarm.",
    "Parameters":{  
       "IAMPassword":{  
          "Type":"String",
@@ -20,7 +20,7 @@
             },
             "Policies":[  
                {  
-                  "PolicyName":"billingalarmpolicy",
+                  "PolicyName":"BillingPolicy",
                   "PolicyDocument":{  
                      "Version":"2012-10-17",
                      "Statement":[  
