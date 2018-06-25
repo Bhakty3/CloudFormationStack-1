@@ -5,7 +5,7 @@
    "Parameters":{  
       "BillingNotificationEmail":{  
          "Type":"String",
-         "Default":"bhaktydalsania@gmail.com"
+         "Default":"abc@gmail.com"
       },
       "IAMPassword":{  
          "Type":"String",
