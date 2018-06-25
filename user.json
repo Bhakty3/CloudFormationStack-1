@@ -1,0 +1,81 @@
+
+{  
+   "AWSTemplateFormatVersion": "2010-09-09",
+   "Description":"AWS CloudFormation Template educate-iam-and-billing-alarm: Creates default IAM User and Billing Alarm.",
+   "Parameters":{  
+      "BillingNotificationEmail":{  
+         "Type":"String",
+         "Default":"bhaktydalsania@gmail.com"
+      },
+      "IAMPassword":{  
+         "Type":"String",
+         "Default":"password"
+      }
+   },
+   "Resources":{  
+      "Redbill":{
+         "Type":"AWS::IAM::User",
+         "Properties":{  
+            "Path":"/",
+            "LoginProfile":{
+               "Password":{ 
+                  "Ref":"IAMPassword"
+               },
+            },
+            "Policies":[  
+               {  
+                  "PolicyName":"billingalarmpolicy",
+                  "PolicyDocument":{  
+                     "Version":"2012-10-17",
+                     "Statement":[  
+                        {  
+                           "Effect":"Allow",
+                           "Action":[
+                              "aws-portal:*Billing",
+                              "aws-portal:ModifyPaymentMethods",
+                              "aws-portal:ViewAccount",
+                              "aws-portal:ViewBilling",
+                              "aws-portal:ViewPaymentMethods",
+                              "aws-portal:ViewUsage"
+                           ],
+                           "Resource":[
+                              "*"
+                           ]
+                        },
+                     ]
+                  }
+               }
+            ]
+         }
+      }
+   },
+   "Outputs":{  
+      "IAMUserName":{  
+         "Description":"IAM User Name",
+         "Value":{  
+            "Ref": "Redbill"
+         }
+      },
+      "IAMPassword":{  
+         "Description":"IAM Password",
+         "Value":{  
+            "Ref":"IAMPassword"
+         }
+      },
+      "IAMConsoleURL":{  
+         "Description":"IAM Secret Key",
+         "Value":{  
+            "Fn::Join":[  
+               "",
+               [  
+                  "https://",
+                  {  
+                     "Ref":"AWS::AccountId"
+                  },
+                  ".signin.aws.amazon.com/console"
+               ]
+            ]
+         }
+      }
+   }
+}
