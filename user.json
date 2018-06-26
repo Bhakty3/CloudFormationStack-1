@@ -7,7 +7,7 @@
          "Type":"String",
          "Default":"AbC123#xyz",
          "AllowedPattern":"^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*(_|[^\\w])).+$",
-    	   "Description" : "Password should contain atleast 1 Uppercase,1 Lowercase,1 Numerical,1 symbol and should have length of minimum 8."
+         "Description" : "Password should contain atleast 1 Uppercase,1 Lowercase,1 Numerical,1 symbol and should have length of minimum 8."
       }
    },
    "Resources":{  
