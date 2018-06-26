@@ -5,7 +5,8 @@
    "Parameters":{  
       "IAMPassword":{  
          "Type":"String",
-         "Default":"password"
+         "Default":"AbC123#xyz"
+         "AllowedPattern":"^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*(_|[^\\w])).+$"
       }
    },
    "Resources":{  
