@@ -15,6 +15,7 @@
          "Type":"AWS::IAM::User",
          "Properties":{  
             "Path":"/",
+            "UserName":"Redbill",
             "LoginProfile":{
                "Password":{ 
                   "Ref":"IAMPassword"
